@@ -31,8 +31,6 @@ use atmos_model_mod, only: atmos_model_init, atmos_model_end,  &
                            update_atmos_radiation_physics,     &
                            update_atmos_model_state,           &
                            atmos_data_type, atmos_model_restart
-!--- FMS old io
-use fms_io_mod, only: fms_io_exit!< This can't be removed until fms_io is not used at all
 
 implicit none
 
@@ -456,9 +454,6 @@ contains
 
 !----- final output of diagnostic fields ----0
    call diag_manager_end (Time_atmos)
-
-!----- to be removed once fms_io is fully deprecated -----
-   call fms_io_exit()
 
 !-----------------------------------------------------------------------
 
